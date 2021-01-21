@@ -13,7 +13,9 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<BnbModel>(
       builder: (context, model, child) {
-        return tabsContent[model.currentSelectedItemIndex];
+        return Center(
+          child: tabsContent[model.currentSelectedItemIndex],
+        );
       },
     );
   }
