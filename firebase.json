@@ -6,11 +6,7 @@
   "hosting": {
     "site": "rahul-badgujar-portfolio",
     "public": "build/web",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",
@@ -22,4 +18,3 @@
     "rules": "storage.rules"
   }
 }
-

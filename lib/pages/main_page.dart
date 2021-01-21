@@ -7,15 +7,17 @@ class MainPage extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_circle,
-              ),
-              label: "About"),
+            icon: Icon(
+              Icons.account_circle,
+            ),
+            label: "About",
+          ),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.mobile_screen_share_rounded,
-              ),
-              label: "Projects"),
+            icon: Icon(
+              Icons.mobile_screen_share_rounded,
+            ),
+            label: "Projects",
+          ),
         ],
       ),
     );

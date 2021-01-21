@@ -42,15 +42,24 @@
     </script>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/8.2.3/firebase-app.js"></script>
-    <script src="/__/firebase/8.2.3/firebase-firestore.js"></script>
-    <script src="/__/firebase/8.2.3/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCN67w15IIRb7OEXAkIMbzWojo6pSbl6eE",
+        authDomain: "my-portfolio-c4c86.firebaseapp.com",
+        projectId: "my-portfolio-c4c86",
+        storageBucket: "my-portfolio-c4c86.appspot.com",
+        messagingSenderId: "134569547819",
+        appId: "1:134569547819:web:105fc4d2a5401b9b4cb26e",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
 
     <script src="main.dart.js" type="application/javascript"></script>
   </body>
