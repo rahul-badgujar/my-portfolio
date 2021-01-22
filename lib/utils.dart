@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum DeviceType { Mobile, Tablet, Desktop }
+enum DeviceType { Mobile, Desktop }
 
 DeviceType getDeviceType(MediaQueryData data) {
   double width = 0.0;
@@ -9,10 +9,8 @@ DeviceType getDeviceType(MediaQueryData data) {
   } else {
     width = data.size.height;
   }
-  if (width > 900) {
-    return DeviceType.Desktop;
-  } else if (width > 600) {
-    return DeviceType.Tablet;
+  if (width <= 500) {
+    return DeviceType.Mobile;
   }
-  return DeviceType.Mobile;
+  return DeviceType.Desktop;
 }
