@@ -13,6 +13,7 @@ class NavBarMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.centerLeft,
       child: IconButton(
         icon: Icon(Icons.menu),
         onPressed: () {
@@ -53,5 +54,23 @@ class NavBarTileMobile extends StatelessWidget {
         ),
       );
     });
+  }
+}
+
+class NavBarListMobile extends StatelessWidget {
+  const NavBarListMobile({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: List.generate(
+        navBarItems.length,
+        (index) => NavBarTileMobile(
+          index: index,
+        ),
+      ),
+    );
   }
 }

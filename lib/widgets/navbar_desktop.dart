@@ -51,7 +51,7 @@ class NavBarDesktopButton extends StatelessWidget {
                   color: model.selectedItemIndex == index
                       ? Colors.white
                       : Colors.white70,
-                  fontSize: screenDimens.width * 0.015,
+                  fontSize: screenDimens.width * 0.013,
                   fontWeight: model.selectedItemIndex == index
                       ? FontWeight.bold
                       : FontWeight.normal,
