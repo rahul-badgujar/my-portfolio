@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/constants.dart';
 import 'package:my_portfolio/providers/navbar_model.dart';
 import 'package:my_portfolio/widgets/about_section.dart';
+import 'package:my_portfolio/widgets/resume_section.dart';
 import 'package:provider/provider.dart';
 
 import '../utils.dart';
@@ -25,6 +27,9 @@ class ContentCanvas extends StatelessWidget {
               : DeviceDetails(context).height * 0.84,
           child: Consumer<NavBarModel>(
             builder: (context, model, child) {
+              if (model.selectedItemIndex == RESUME_SECTION_INDEX) {
+                return ResumeSection();
+              }
               return AboutSection();
             },
           ),
