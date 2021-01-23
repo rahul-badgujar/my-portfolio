@@ -14,62 +14,40 @@ class NavBarMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.centerLeft,
-      child: IconButton(
-        icon: Icon(Icons.menu),
-        onPressed: () {
-          Scaffold.of(context).openDrawer();
-        },
-        color: Colors.white,
-      ),
-    );
-  }
-}
-
-class NavBarTileMobile extends StatelessWidget {
-  final index;
-  const NavBarTileMobile({
-    Key key,
-    @required this.index,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Consumer<NavBarModel>(builder: (context, model, child) {
-      return InkWell(
-        onTap: () {
-          model.selectedItemIndex = index;
-        },
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
-          child: ListTile(
-            title: Text(
-              navBarItems[index],
-              style: TextStyle(
-                fontWeight: model.selectedItemIndex == index
-                    ? FontWeight.bold
-                    : FontWeight.normal,
-              ),
+      child: Consumer<NavBarModel>(
+        builder: (context, model, child) {
+          return PopupMenuButton<int>(
+            icon: Icon(
+              Icons.menu,
+              color: Colors.white,
             ),
-          ),
-        ),
-      );
-    });
-  }
-}
-
-class NavBarListMobile extends StatelessWidget {
-  const NavBarListMobile({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: List.generate(
-        navBarItems.length,
-        (index) => NavBarTileMobile(
-          index: index,
-        ),
+            onSelected: (index) {
+              model.selectedItemIndex = index;
+            },
+            itemBuilder: (index) {
+              return List.generate(
+                navBarItems.length,
+                (index) => PopupMenuItem<int>(
+                  value: index,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 2,
+                    ),
+                    child: Text(
+                      navBarItems[index],
+                      style: TextStyle(
+                        fontWeight: model.selectedItemIndex == index
+                            ? FontWeight.bold
+                            : FontWeight.normal,
+                      ),
+                    ),
+                  ),
+                ),
+              );
+            },
+          );
+        },
       ),
     );
   }

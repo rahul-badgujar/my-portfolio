@@ -17,9 +17,6 @@ class MainPage extends StatelessWidget {
         create: (context) => NavBarModel(),
         child: Scaffold(
           body: Body(),
-          drawer: Drawer(
-            child: NavBarListMobile(),
-          ),
         ),
       ),
     );
@@ -39,46 +36,47 @@ class Body extends StatelessWidget {
     return Stack(
       children: [
         Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: 20,
-              vertical: 10,
-            ),
-            height: size.height * 0.6,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: primaryColor,
-            ),
-            child: Column(
-              children: [
-                deviceType == DeviceType.Desktop
-                    ? NavBarDesktop(size)
-                    : NavBarMobile(size),
-                SizedBox(height: 10),
-                Text(
-                  "PORTFOLIO",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: deviceType == DeviceType.Desktop
-                        ? size.width * 0.036
-                        : size.height * 0.04,
-                    letterSpacing: 5,
-                  ),
+          padding: EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 10,
+          ),
+          height: size.height * 0.6,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: primaryColor,
+          ),
+          child: Column(
+            children: [
+              deviceType == DeviceType.Desktop
+                  ? NavBarDesktop(size)
+                  : NavBarMobile(size),
+              SizedBox(height: 10),
+              Text(
+                "PORTFOLIO",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: deviceType == DeviceType.Desktop
+                      ? size.width * 0.036
+                      : size.height * 0.04,
+                  letterSpacing: 5,
                 ),
-                SizedBox(height: 10),
-                Text(
-                  data["name"],
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: deviceType == DeviceType.Desktop
-                        ? size.width * 0.018
-                        : size.height * 0.022,
-                    letterSpacing: 3,
-                  ),
+              ),
+              SizedBox(height: 10),
+              Text(
+                data["name"],
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: deviceType == DeviceType.Desktop
+                      ? size.width * 0.018
+                      : size.height * 0.022,
+                  letterSpacing: 3,
                 ),
-              ],
-            )),
+              ),
+            ],
+          ),
+        ),
         Align(
           alignment: Alignment.bottomCenter,
           child: Card(
