@@ -27,7 +27,7 @@ dependencies:
   firebase: ^8.0.0
   firebase_core: ^0.7.0
   firebase_storage: ^7.0.0
-  http: ^0.12.2
+  flutter_svg: ^0.19.2+1
   provider: ^4.3.3
 
 dev_dependencies:
@@ -48,6 +48,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/images/
+    - assets/icons/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

@@ -20,7 +20,7 @@ class DeviceDetails {
     } else {
       width = data.size.height;
     }
-    if (width <= 500) {
+    if (width <= 540) {
       return DeviceType.Mobile;
     }
     return DeviceType.Desktop;

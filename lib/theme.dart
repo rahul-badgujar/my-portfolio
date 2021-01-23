@@ -16,6 +16,13 @@ class AppTheme {
       scaffoldBackgroundColor: Color.fromRGBO(25, 25, 25, 1.0),
       textTheme: getTextTheme(),
       cardTheme: getCardTheme(),
+      iconTheme: getIconTheme(),
+    );
+  }
+
+  IconThemeData getIconTheme() {
+    return IconThemeData(
+      color: primaryTextColorBright,
     );
   }
 

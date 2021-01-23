@@ -17,7 +17,6 @@ class NavBarMobile extends StatelessWidget {
             color: Theme.of(context).cardTheme.color,
             icon: Icon(
               Icons.menu,
-              color: Colors.white,
             ),
             onSelected: (index) {
               model.selectedItemIndex = index;
