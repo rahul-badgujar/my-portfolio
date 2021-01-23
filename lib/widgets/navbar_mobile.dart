@@ -5,10 +5,7 @@ import 'package:provider/provider.dart';
 import '../constants.dart';
 
 class NavBarMobile extends StatelessWidget {
-  final size;
-  NavBarMobile(
-    this.size,
-  );
+  NavBarMobile();
 
   @override
   Widget build(BuildContext context) {

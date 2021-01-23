@@ -11,7 +11,6 @@ import 'widgets/navbar_mobile.dart';
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return SafeArea(
       child: ChangeNotifierProvider(
         create: (context) => NavBarModel(),
@@ -30,9 +29,6 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mediaQueryData = MediaQuery.of(context);
-    final deviceType = getDeviceType(mediaQueryData);
-    final size = mediaQueryData.size;
     return Stack(
       children: [
         Container(
@@ -40,25 +36,26 @@ class Body extends StatelessWidget {
             horizontal: 20,
             vertical: 10,
           ),
-          height: size.height * 0.6,
+          height: DeviceDetails(context).height * 0.6,
           width: double.infinity,
           decoration: BoxDecoration(
             color: primaryColor,
           ),
           child: Column(
             children: [
-              deviceType == DeviceType.Desktop
-                  ? NavBarDesktop(size)
-                  : NavBarMobile(size),
+              DeviceDetails(context).deviceType == DeviceType.Desktop
+                  ? NavBarDesktop()
+                  : NavBarMobile(),
               SizedBox(height: 10),
               Text(
                 "PORTFOLIO",
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: deviceType == DeviceType.Desktop
-                      ? size.width * 0.036
-                      : size.height * 0.04,
+                  fontSize:
+                      DeviceDetails(context).deviceType == DeviceType.Desktop
+                          ? DeviceDetails(context).width * 0.036
+                          : DeviceDetails(context).height * 0.04,
                   letterSpacing: 5,
                 ),
               ),
@@ -68,9 +65,10 @@ class Body extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: deviceType == DeviceType.Desktop
-                      ? size.width * 0.018
-                      : size.height * 0.022,
+                  fontSize:
+                      DeviceDetails(context).deviceType == DeviceType.Desktop
+                          ? DeviceDetails(context).width * 0.018
+                          : DeviceDetails(context).height * 0.022,
                   letterSpacing: 3,
                 ),
               ),
@@ -84,8 +82,8 @@ class Body extends StatelessWidget {
             child: SingleChildScrollView(
               physics: BouncingScrollPhysics(),
               child: Container(
-                width: size.width * 0.9,
-                height: size.height * 0.75,
+                width: DeviceDetails(context).width * 0.9,
+                height: DeviceDetails(context).height * 0.75,
               ),
             ),
           ),

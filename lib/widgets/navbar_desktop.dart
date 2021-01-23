@@ -3,11 +3,10 @@ import 'package:my_portfolio/providers/navbar_model.dart';
 import 'package:provider/provider.dart';
 
 import '../constants.dart';
+import '../utils.dart';
 
 class NavBarDesktop extends StatelessWidget {
-  final Size screenDimens;
-  const NavBarDesktop(
-    this.screenDimens, {
+  const NavBarDesktop({
     Key key,
   }) : super(key: key);
 
@@ -17,8 +16,7 @@ class NavBarDesktop extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: List.generate(
         navBarItems.length,
-        (index) =>
-            NavBarDesktopButton(index: index, screenDimens: screenDimens),
+        (index) => NavBarDesktopButton(index: index),
       ),
     );
   }
@@ -29,10 +27,7 @@ class NavBarDesktopButton extends StatelessWidget {
   const NavBarDesktopButton({
     Key key,
     @required this.index,
-    @required this.screenDimens,
   }) : super(key: key);
-
-  final Size screenDimens;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +46,7 @@ class NavBarDesktopButton extends StatelessWidget {
                   color: model.selectedItemIndex == index
                       ? Colors.white
                       : Colors.white70,
-                  fontSize: screenDimens.width * 0.013,
+                  fontSize: DeviceDetails(context).width * 0.013,
                   fontWeight: model.selectedItemIndex == index
                       ? FontWeight.bold
                       : FontWeight.normal,
