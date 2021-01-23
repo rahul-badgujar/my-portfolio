@@ -15,24 +15,27 @@ class ContentCanvas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+      margin: EdgeInsets.symmetric(
+        vertical: 8,
+        horizontal: 4,
+      ),
       elevation: 100,
-      child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-          width: DeviceDetails(context).width * 0.92,
-          height: DeviceDetails(context).deviceType == DeviceType.Desktop
-              ? DeviceDetails(context).height * 0.82
-              : DeviceDetails(context).height * 0.84,
-          child: Consumer<NavBarModel>(
-            builder: (context, model, child) {
-              if (model.selectedItemIndex == RESUME_SECTION_INDEX) {
-                return ResumeSection();
-              }
-              return AboutSection();
-            },
-          ),
+      child: Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: DeviceDetails(context).width * 0.02,
+          vertical: DeviceDetails(context).height * 0.02,
+        ),
+        width: DeviceDetails(context).width * 0.92,
+        height: DeviceDetails(context).deviceType == DeviceType.Desktop
+            ? DeviceDetails(context).height * 0.82
+            : DeviceDetails(context).height * 0.84,
+        child: Consumer<NavBarModel>(
+          builder: (context, model, child) {
+            if (model.selectedItemIndex == RESUME_SECTION_INDEX) {
+              return ResumeSection();
+            }
+            return AboutSection();
+          },
         ),
       ),
     );

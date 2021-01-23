@@ -41,12 +41,6 @@
       }
     </script>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.min.js"></script>
-    <script type="text/javascript">
-      pdfjsLib.GlobalWorkerOptions.workerSrc =
-        "//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.worker.min.js";
-    </script>
-
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
@@ -67,6 +61,12 @@
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.min.js"></script>
+    <script type="text/javascript">
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.worker.min.js";
     </script>
 
     <script src="main.dart.js" type="application/javascript"></script>

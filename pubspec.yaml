@@ -29,7 +29,6 @@ dependencies:
   firebase_storage: ^7.0.0
   http: ^0.12.2
   provider: ^4.3.3
-  native_pdf_view: any
 
 dev_dependencies:
   flutter_test:
