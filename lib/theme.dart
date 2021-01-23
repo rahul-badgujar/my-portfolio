@@ -1,8 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants.dart';
 
-ThemeData getAppTheme() {
-  return ThemeData(
-    primaryColor: primaryColor,
-  );
+class AppTheme {
+  final ThemeData base;
+  AppTheme({
+    @required this.base,
+  });
+
+  ThemeData getTheme() {
+    return ThemeData(
+      primaryColor: primaryColor,
+      scaffoldBackgroundColor: Color.fromRGBO(25, 25, 25, 1.0),
+      textTheme: getTextTheme(),
+      cardTheme: getCardTheme(),
+    );
+  }
+
+  CardTheme getCardTheme() {
+    return base.cardTheme.copyWith(
+      color: Color.fromRGBO(38, 38, 38, 1.0),
+      elevation: 100,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+    );
+  }
+
+  TextTheme getTextTheme() {
+    return base.textTheme.copyWith(
+      headline1: base.textTheme.headline1.copyWith(
+        color: primaryTextColor,
+      ),
+      headline4: base.textTheme.headline4.copyWith(
+        color: primaryTextColor,
+      ),
+      subtitle1: base.textTheme.subtitle1.copyWith(
+        color: primaryTextColor,
+      ),
+      subtitle2: base.textTheme.subtitle2.copyWith(
+        color: primaryTextColor,
+      ),
+    );
+  }
 }

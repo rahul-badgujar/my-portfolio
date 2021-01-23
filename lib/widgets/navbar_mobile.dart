@@ -14,6 +14,7 @@ class NavBarMobile extends StatelessWidget {
       child: Consumer<NavBarModel>(
         builder: (context, model, child) {
           return PopupMenuButton<int>(
+            color: Theme.of(context).cardTheme.color,
             icon: Icon(
               Icons.menu,
               color: Colors.white,
@@ -33,11 +34,14 @@ class NavBarMobile extends StatelessWidget {
                     ),
                     child: Text(
                       navBarItems[index],
-                      style: TextStyle(
-                        fontWeight: model.selectedItemIndex == index
-                            ? FontWeight.bold
-                            : FontWeight.normal,
-                      ),
+                      style: Theme.of(context).textTheme.subtitle2.copyWith(
+                            fontWeight: model.selectedItemIndex == index
+                                ? FontWeight.bold
+                                : null,
+                            color: model.selectedItemIndex == index
+                                ? primaryTextColorBright
+                                : null,
+                          ),
                     ),
                   ),
                 ),

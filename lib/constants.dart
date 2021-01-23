@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-final primaryColor = Colors.indigoAccent.shade700;
-final primaryTextColor = Colors.black;
-final secondaryTextColor = Colors.black.withOpacity(0.65);
+final primaryColor = Color.fromRGBO(205, 92, 92, 1.0);
+final primaryTextColor = Colors.white70;
+final primaryTextColorBright = Colors.white;
 
 final navBarItems = [
   "About",

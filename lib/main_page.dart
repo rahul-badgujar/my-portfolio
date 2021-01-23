@@ -3,10 +3,10 @@ import 'package:my_portfolio/constants.dart';
 import 'package:my_portfolio/providers/navbar_model.dart';
 import 'package:my_portfolio/utils.dart';
 import 'package:provider/provider.dart';
-
-import 'data.dart';
+import 'widgets/content_canvas.dart';
 import 'widgets/navbar_desktop.dart';
 import 'widgets/navbar_mobile.dart';
+import 'widgets/portfolio_label.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -46,47 +46,13 @@ class Body extends StatelessWidget {
               DeviceDetails(context).deviceType == DeviceType.Desktop
                   ? NavBarDesktop()
                   : NavBarMobile(),
-              SizedBox(height: 10),
-              Text(
-                "PORTFOLIO",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize:
-                      DeviceDetails(context).deviceType == DeviceType.Desktop
-                          ? DeviceDetails(context).width * 0.036
-                          : DeviceDetails(context).height * 0.04,
-                  letterSpacing: 5,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                data["name"],
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize:
-                      DeviceDetails(context).deviceType == DeviceType.Desktop
-                          ? DeviceDetails(context).width * 0.018
-                          : DeviceDetails(context).height * 0.022,
-                  letterSpacing: 3,
-                ),
-              ),
+              PortfolioLabel(),
             ],
           ),
         ),
         Align(
           alignment: Alignment.bottomCenter,
-          child: Card(
-            elevation: 100,
-            child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
-              child: Container(
-                width: DeviceDetails(context).width * 0.9,
-                height: DeviceDetails(context).height * 0.75,
-              ),
-            ),
-          ),
+          child: ContentCanvas(),
         ),
       ],
     );
