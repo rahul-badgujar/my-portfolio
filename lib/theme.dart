@@ -10,6 +10,9 @@ class AppTheme {
   ThemeData getTheme() {
     return ThemeData(
       primaryColor: primaryColor,
+      primaryColorLight: primaryColor,
+      primaryColorDark: primaryColor,
+      accentColor: primaryColor,
       scaffoldBackgroundColor: Color.fromRGBO(25, 25, 25, 1.0),
       textTheme: getTextTheme(),
       cardTheme: getCardTheme(),
@@ -34,10 +37,16 @@ class AppTheme {
       headline4: base.textTheme.headline4.copyWith(
         color: primaryTextColor,
       ),
+      headline5: base.textTheme.headline5.copyWith(
+        color: primaryTextColor,
+      ),
       subtitle1: base.textTheme.subtitle1.copyWith(
         color: primaryTextColor,
       ),
       subtitle2: base.textTheme.subtitle2.copyWith(
+        color: primaryTextColor,
+      ),
+      bodyText2: base.textTheme.bodyText2.copyWith(
         color: primaryTextColor,
       ),
     );
