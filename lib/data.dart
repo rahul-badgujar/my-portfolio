@@ -3,6 +3,10 @@ final data = <String, dynamic>{
   "title": "3-star on Codechef | FlutterFire Developer | C++ Programmer",
   "photo": "assets/images/dp-transparent.png",
   "resume": "assets/images/resume.jpg",
+  "resume-url":
+      "https://github.com/rahul-badgujar/rahul-badgujar/blob/main/Resumes/RahulBadgujar_InternshalaResume.pdf",
+  "resume-download-url":
+      "https://github.com/rahul-badgujar/rahul-badgujar/raw/main/Resumes/RahulBadgujar_InternshalaResume.pdf",
   "contact": [
     {
       "domain": "LinkedIn",

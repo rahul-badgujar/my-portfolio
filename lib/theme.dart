@@ -13,10 +13,22 @@ class AppTheme {
       primaryColorLight: primaryColor,
       primaryColorDark: primaryColor,
       accentColor: primaryColor,
+      buttonColor: primaryColor,
       scaffoldBackgroundColor: Color.fromRGBO(25, 25, 25, 1.0),
       textTheme: getTextTheme(),
       cardTheme: getCardTheme(),
       iconTheme: getIconTheme(),
+      textButtonTheme: TextButtonThemeData(
+        style: ButtonStyle(
+          foregroundColor: MaterialStateProperty.all<Color>(primaryColor),
+          padding: MaterialStateProperty.all<EdgeInsets>(
+            EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 12,
+            ),
+          ),
+        ),
+      ),
     );
   }
 

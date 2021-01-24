@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:js' as js;
-import '../constants.dart';
-import '../utils.dart';
 
 class ContactItem extends StatelessWidget {
   final String title;
