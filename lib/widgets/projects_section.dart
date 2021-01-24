@@ -117,16 +117,17 @@ class ProjectsSection extends StatelessWidget {
                           },
                           icon: Icons.code,
                         ),
-                        ActionButton(
-                          title: "Executable",
-                          onPressed: () {
-                            js.context.callMethod(
-                              "open",
-                              [projectData["executable"]],
-                            );
-                          },
-                          icon: Icons.download_sharp,
-                        ),
+                        if (projectData["executable"] != null)
+                          ActionButton(
+                            title: "Executable",
+                            onPressed: () {
+                              js.context.callMethod(
+                                "open",
+                                [projectData["executable"]],
+                              );
+                            },
+                            icon: Icons.download_sharp,
+                          ),
                       ],
                     ),
                   ),

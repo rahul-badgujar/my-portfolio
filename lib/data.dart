@@ -55,7 +55,7 @@ Give a try to the Application: http://bit.ly/EShopee-APK
 Code is available on Github at https://lnkd.in/gb7rk8B''',
       "youtube-url": "https://youtu.be/JX8Cf5qr_hE",
       "youtube-id": "JX8Cf5qr_hE",
-      "skills": ["Flutter", "Firebase"],
+      "skills": ["Flutter", "Firebase", "eCommerce"],
       "source-code-url":
           "https://github.com/rahul-badgujar/EShopee-Flutter-eCommerce-App",
       "executable":
@@ -80,18 +80,31 @@ References
 - Stack Overflow : https://lnkd.in/ds6pXSR''',
       "youtube-url": "https://youtu.be/gB7yJ9x3z4c",
       "youtube-id": "gB7yJ9x3z4c",
-      "skills": ["Flutter", "API"],
+      "skills": ["Flutter", "Fetching Internet Data"],
       "source-code-url":
           "https://github.com/rahul-badgujar/AeroWeatherMate-App",
       "executable":
           "https://drive.google.com/drive/folders/1uoaP7hHdkkAl6b2XUQml1rKN56zbVfgZ?usp=sharing",
+    },
+    {
+      "title": "The Classsic Tetris Game: C++ Game",
+      "description": '''The Classic Tetris Game
+developed by me in C++ using SDL2 Library
+Code available at : https://lnkd.in/gwme-w7
+YouTube : https://lnkd.in/gpaUFAg
+''',
+      "youtube-url": "https://www.youtube.com/watch?v=Nf8Q8_ibK9E&t=121s",
+      "youtube-id": "Nf8Q8_ibK9E",
+      "skills": ["C++", "SDL2", "Game Development"],
+      "source-code-url":
+          "https://github.com/rahul-badgujar/The-Classic-Tetris-Game",
     },
     /* {
       "title": "",
       "description": "",
       "youtube-url": "",
       "youtube-id":"",
-      "skilss": [],
+      "skills": [],
       "source-code-url": "",
       "executable":"",
      
