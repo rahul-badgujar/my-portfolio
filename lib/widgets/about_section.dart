@@ -14,6 +14,7 @@ class _AboutSectionState extends State<AboutSection> {
   Widget build(BuildContext context) {
     return Center(
       child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           children: [
             SizedBox(height: 30),
@@ -58,6 +59,7 @@ class _AboutSectionState extends State<AboutSection> {
                 maxHeight: 400,
               ),
               child: GridView.builder(
+                physics: BouncingScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
                   crossAxisSpacing: 10,
