@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants.dart';
 import 'package:my_portfolio/providers/navbar_model.dart';
 import 'package:my_portfolio/widgets/about_section.dart';
-import 'package:my_portfolio/widgets/contact_section.dart';
 import 'package:my_portfolio/widgets/resume_section.dart';
 import 'package:provider/provider.dart';
 
@@ -34,8 +33,6 @@ class ContentCanvas extends StatelessWidget {
           builder: (context, model, child) {
             if (model.selectedItemIndex == RESUME_SECTION_INDEX) {
               return ResumeSection();
-            } else if (model.selectedItemIndex == CONTACT_SECTION_INDEX) {
-              return ContactSection();
             }
             return AboutSection();
           },

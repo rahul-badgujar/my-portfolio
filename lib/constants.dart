@@ -5,13 +5,11 @@ final primaryTextColor = Colors.white70;
 final primaryTextColorBright = Colors.white;
 
 const navBarItems = [
-  "About",
-  "Projects",
-  "Resume",
-  "Contact",
+  "ABOUT ME",
+  "PROJECTS",
+  "RESUME",
 ];
 
 const ABOUT_SECTION_INDEX = 0;
 const PROJECTS_SECTION_INDEX = 1;
 const RESUME_SECTION_INDEX = 2;
-const CONTACT_SECTION_INDEX = 3;
