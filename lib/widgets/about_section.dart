@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/constants.dart';
 import 'package:my_portfolio/data.dart';
 import 'package:my_portfolio/utils.dart';
 
@@ -36,7 +37,9 @@ class _AboutSectionState extends State<AboutSection> {
                   DeviceDetails(context).deviceType == DeviceType.Desktop
                       ? 1.5
                       : 1.2,
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headline5.copyWith(
+                    color: primaryTextColorBright,
+                  ),
             ),
             SizedBox(height: 10),
             Text(
@@ -69,8 +72,8 @@ class _AboutSectionState extends State<AboutSection> {
                           : 20,
                   mainAxisExtent:
                       DeviceDetails(context).deviceType == DeviceType.Desktop
-                          ? 40
-                          : 30,
+                          ? 50
+                          : 40,
                 ),
                 itemBuilder: (context, index) {
                   return ContactItem(

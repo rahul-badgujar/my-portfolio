@@ -7,32 +7,32 @@ final data = <String, dynamic>{
     {
       "domain": "LinkedIn",
       "url": "https://www.linkedin.com/in/rahulbadgujar/",
-      "logo": "assets/icons/linkedin_logo.svg",
+      "logo": "assets/icons/linkedin-icon.png",
     },
     {
       "domain": "GitHub",
       "url": "https://github.com/rahul-badgujar",
-      "logo": "assets/icons/github_logo.svg",
+      "logo": "assets/icons/github-icon.png",
     },
     {
-      "domain": "Codechef",
+      "domain": "Competitive Coding",
       "url": "https://www.codechef.com/users/im_rb7_here",
-      "logo": "assets/icons/codechef_icon.svg",
+      "logo": "assets/icons/contest-icon.png",
     },
     {
       "domain": "Facebook",
       "url": "https://www.facebook.com/imRB7here",
-      "logo": "assets/icons/facebook_logo.svg",
+      "logo": "assets/icons/facebook-icon.png",
     },
     {
       "domain": "Instagram",
       "url": "https://www.instagram.com/_rahul.badgujar_/",
-      "logo": "assets/icons/instagram_logo.svg",
+      "logo": "assets/icons/instagram-icon.png",
     },
     {
       "domain": "Twitter",
       "url": "https://twitter.com/imRB7here",
-      "logo": "assets/icons/twitter_logo.svg",
+      "logo": "assets/icons/twitter-icon.png",
     },
   ],
 };

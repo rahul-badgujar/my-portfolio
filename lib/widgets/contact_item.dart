@@ -18,13 +18,13 @@ class ContactItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => js.context.callMethod("open", [url]),
-      child: Tooltip(
-        message: title,
-        child: SvgPicture.asset(
-          assetPath,
-          color: primaryTextColor,
+    return Tooltip(
+      message: title,
+      child: IconButton(
+        icon: Image.asset(assetPath),
+        onPressed: () => js.context.callMethod(
+          "open",
+          [url],
         ),
       ),
     );
