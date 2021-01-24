@@ -59,6 +59,9 @@ class AppTheme {
       headline5: base.textTheme.headline5.copyWith(
         color: primaryTextColor,
       ),
+      headline6: base.textTheme.headline6.copyWith(
+        color: primaryTextColor,
+      ),
       subtitle1: base.textTheme.subtitle1.copyWith(
         color: primaryTextColor,
       ),
