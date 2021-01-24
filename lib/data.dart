@@ -17,7 +17,7 @@ final data = <String, dynamic>{
     {
       "domain": "Codechef",
       "url": "https://www.codechef.com/users/im_rb7_here",
-      "logo": "assets/icons/code_logo.svg",
+      "logo": "assets/icons/codechef_icon.svg",
     },
     {
       "domain": "Facebook",

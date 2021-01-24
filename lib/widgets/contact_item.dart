@@ -20,35 +20,11 @@ class ContactItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => js.context.callMethod("open", [url]),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 8,
-          vertical: 4,
-        ),
-        child: Row(
-          children: [
-            Spacer(flex: 2),
-            Expanded(
-              flex: 1,
-              child: SvgPicture.asset(
-                assetPath,
-                color: primaryTextColor,
-              ),
-            ),
-            Spacer(),
-            Expanded(
-              flex: 3,
-              child: Text(
-                title,
-                textScaleFactor:
-                    DeviceDetails(context).deviceType == DeviceType.Desktop
-                        ? 1
-                        : 0.8,
-                style: Theme.of(context).textTheme.subtitle2,
-              ),
-            ),
-            Spacer(flex: 2),
-          ],
+      child: Tooltip(
+        message: title,
+        child: SvgPicture.asset(
+          assetPath,
+          color: primaryTextColor,
         ),
       ),
     );

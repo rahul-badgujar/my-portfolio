@@ -48,19 +48,27 @@ class _AboutSectionState extends State<AboutSection> {
                       : 0.9,
               style: Theme.of(context).textTheme.bodyText2,
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 40),
             ConstrainedBox(
               constraints: BoxConstraints(
-                maxWidth: 800,
+                maxWidth:
+                    DeviceDetails(context).deviceType == DeviceType.Desktop
+                        ? 500
+                        : 300,
                 maxHeight: 400,
               ),
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount:
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing:
                       DeviceDetails(context).deviceType == DeviceType.Desktop
-                          ? 3
-                          : 2,
-                  childAspectRatio: 3,
+                          ? 30
+                          : 20,
+                  mainAxisExtent:
+                      DeviceDetails(context).deviceType == DeviceType.Desktop
+                          ? 40
+                          : 30,
                 ),
                 itemBuilder: (context, index) {
                   return ContactItem(
