@@ -2,7 +2,7 @@ final data = <String, dynamic>{
   "name": "Rahul Badgujar",
   "title": "3-star on Codechef | FlutterFire Developer | C++ Programmer",
   "bio":
-      '''I am a passionate programmer with approximately 3 years of coding experience. Moreover, I am currently pursuing Bachelors in Information Technology at the Pimpri Chinchwad College of Engineering in Pune. I've had a good coding experience in C++, Flutter. I am currently exploring Firebase and Flutter.''',
+      '''I am a passionate programmer with approximately 3 years of coding experience. Moreover, I am currently pursuing Bachelors in Information Technology at  Pimpri Chinchwad College of Engineering in Pune. I've  a good coding experience in domains such as  C++, Flutter and I am currently exploring  Firebase and Flutter.''',
   "photo": "assets/images/dp-transparent.png",
   "skillset": [
     "C++",
@@ -12,7 +12,6 @@ final data = <String, dynamic>{
     "Java",
   ],
   "work": "Student",
-  "competitive-profile": "Codechef Rating: 3* (1639)",
   "currently-working": "FlutterFire",
   "resume": "assets/images/resume.jpg",
   "resume-url":
