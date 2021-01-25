@@ -10,6 +10,8 @@ class AboutSection extends StatefulWidget {
   _AboutSectionState createState() => _AboutSectionState();
 }
 
+// TODO: Add bio, skillset, and job
+// TODO: scroll bar
 class _AboutSectionState extends State<AboutSection> {
   @override
   Widget build(BuildContext context) {
@@ -57,32 +59,19 @@ class _AboutSectionState extends State<AboutSection> {
               constraints: BoxConstraints(
                 maxWidth:
                     DeviceDetails(context).deviceType == DeviceType.Desktop
-                        ? 500
-                        : 300,
-                maxHeight: 400,
+                        ? 280
+                        : 180,
               ),
-              child: GridView.builder(
-                physics: BouncingScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing:
-                      DeviceDetails(context).deviceType == DeviceType.Desktop
-                          ? 30
-                          : 20,
-                  mainAxisExtent:
-                      DeviceDetails(context).deviceType == DeviceType.Desktop
-                          ? 50
-                          : 40,
-                ),
-                itemBuilder: (context, index) {
-                  return ContactItem(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: List.generate(
+                  data["contact"].length,
+                  (index) => ContactItem(
                     title: data["contact"][index]["domain"].toString(),
                     url: data["contact"][index]["url"].toString(),
                     assetPath: data["contact"][index]["logo"].toString(),
-                  );
-                },
-                itemCount: data["contact"].length,
+                  ),
+                ),
               ),
             ),
           ],

@@ -1,7 +1,19 @@
 final data = <String, dynamic>{
   "name": "Rahul Badgujar",
   "title": "3-star on Codechef | FlutterFire Developer | C++ Programmer",
+  "bio":
+      '''I am a passionate programmer with approximately 3 years of coding experience. Moreover, I am currently pursuing Bachelors in Information Technology at the Pimpri Chinchwad College of Engineering in Pune. I've had a good coding experience in C++, Flutter. I am currently exploring Firebase and Flutter.''',
   "photo": "assets/images/dp-transparent.png",
+  "skillset": [
+    "C++",
+    "Flutter",
+    "Firebase",
+    "Python",
+    "Java",
+  ],
+  "work": "Student",
+  "competitive-profile": "Codechef Rating: 3* (1639)",
+  "currently-working": "FlutterFire",
   "resume": "assets/images/resume.jpg",
   "resume-url":
       "https://github.com/rahul-badgujar/rahul-badgujar/blob/main/Resumes/RahulBadgujar_InternshalaResume.pdf",
@@ -23,7 +35,7 @@ final data = <String, dynamic>{
       "url": "https://www.codechef.com/users/im_rb7_here",
       "logo": "assets/icons/contest-icon.png",
     },
-    {
+    /* {
       "domain": "Facebook",
       "url": "https://www.facebook.com/imRB7here",
       "logo": "assets/icons/facebook-icon.png",
@@ -37,7 +49,7 @@ final data = <String, dynamic>{
       "domain": "Twitter",
       "url": "https://twitter.com/imRB7here",
       "logo": "assets/icons/twitter-icon.png",
-    },
+    }, */
   ],
   "projects": [
     {
