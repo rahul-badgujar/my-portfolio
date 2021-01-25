@@ -18,7 +18,7 @@ class _AboutSectionState extends State<AboutSection> {
         constraints: BoxConstraints(
           maxWidth: DeviceDetails(context).deviceType == DeviceType.Desktop
               ? 560
-              : 400,
+              : 380,
         ),
         child: Column(
           children: [

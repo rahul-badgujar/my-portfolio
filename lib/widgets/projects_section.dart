@@ -14,7 +14,7 @@ class ProjectsSection extends StatelessWidget {
         constraints: BoxConstraints(
           maxWidth: DeviceDetails(context).deviceType == DeviceType.Desktop
               ? 700
-              : 300,
+              : 360,
         ),
         child: Column(
           children: List.generate(
