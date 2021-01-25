@@ -27,6 +27,7 @@ class ProjectsSection extends StatelessWidget {
                       DeviceDetails(context).deviceType == DeviceType.Desktop
                           ? 12
                           : 6,
+                  horizontal: 4,
                 ),
                 padding: EdgeInsets.all(
                   DeviceDetails(context).deviceType == DeviceType.Desktop
@@ -213,6 +214,7 @@ class _PlayerState extends State<Player> {
         startAt: Duration(seconds: 0),
         showControls: true,
         showFullscreenButton: true,
+        autoPlay: false,
       ),
     );
   }
