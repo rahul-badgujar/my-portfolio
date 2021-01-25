@@ -7,33 +7,30 @@ import '../data.dart';
 class ResumeSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
-      child: Column(
-        children: [
-          TextButton.icon(
-            onPressed: () {
-              js.context.callMethod(
-                "open",
-                [data["resume-download-url"]],
-              );
-            },
-            icon: Icon(Icons.file_download),
-            label: Text("Download"),
+    return Column(
+      children: [
+        ElevatedButton.icon(
+          onPressed: () {
+            js.context.callMethod(
+              "open",
+              [data["resume-download-url"]],
+            );
+          },
+          icon: Icon(Icons.file_download),
+          label: Text("Download"),
+        ),
+        SizedBox(height: 10),
+        ConstrainedBox(
+          constraints: BoxConstraints(
+            maxHeight: 1500,
           ),
-          SizedBox(height: 10),
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              maxHeight: 1500,
-            ),
-            child: PinchZoomImage(
-              image: Image.asset(
-                data["resume"],
-              ),
+          child: PinchZoomImage(
+            image: Image.asset(
+              data["resume"],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

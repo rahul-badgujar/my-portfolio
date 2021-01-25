@@ -29,32 +29,46 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          padding: EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 10,
-          ),
-          height: DeviceDetails(context).height * 0.6,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: primaryColor,
-          ),
-          child: Column(
-            children: [
-              DeviceDetails(context).deviceType == DeviceType.Desktop
-                  ? NavBarDesktop()
-                  : NavBarMobile(),
-              PortfolioLabel(),
-            ],
-          ),
+    return SingleChildScrollView(
+      child: Container(
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            Align(
+              alignment: Alignment.topCenter,
+              child: Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 10,
+                ),
+                height: DeviceDetails(context).height * 0.6,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: primaryColor,
+                ),
+                child: Column(
+                  children: [
+                    DeviceDetails(context).deviceType == DeviceType.Desktop
+                        ? NavBarDesktop()
+                        : NavBarMobile(),
+                    PortfolioLabel(),
+                  ],
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Column(
+                children: [
+                  SizedBox(height: DeviceDetails(context).height * 0.14),
+                  ContentCanvas(),
+                  SizedBox(height: DeviceDetails(context).height * 0.05),
+                ],
+              ),
+            ),
+          ],
         ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: ContentCanvas(),
-        ),
-      ],
+      ),
     );
   }
 }

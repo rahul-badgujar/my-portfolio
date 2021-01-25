@@ -27,9 +27,6 @@ class ContentCanvas extends StatelessWidget {
           vertical: DeviceDetails(context).height * 0.02,
         ),
         width: DeviceDetails(context).width * 0.92,
-        height: DeviceDetails(context).deviceType == DeviceType.Desktop
-            ? DeviceDetails(context).height * 0.82
-            : DeviceDetails(context).height * 0.84,
         child: Consumer<NavBarModel>(
           builder: (context, model, child) {
             if (model.selectedItemIndex == RESUME_SECTION_INDEX) {

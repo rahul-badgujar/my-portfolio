@@ -9,153 +9,153 @@ import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 class ProjectsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
-      child: Column(
-        children: List.generate(
-          data["projects"].length,
-          (index) {
-            final projectData = data["projects"][index];
-            return Container(
-              margin: EdgeInsets.symmetric(
-                vertical:
-                    DeviceDetails(context).deviceType == DeviceType.Desktop
-                        ? 8
-                        : 4,
-              ),
-              padding: EdgeInsets.all(
-                DeviceDetails(context).deviceType == DeviceType.Desktop
-                    ? 14
-                    : 8,
-              ),
-              constraints: BoxConstraints(
-                maxWidth:
-                    DeviceDetails(context).deviceType == DeviceType.Desktop
-                        ? 700
-                        : 320,
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.white.withOpacity(0.1),
-              ),
-              child: Column(
-                children: [
-                  Player(id: projectData["youtube-id"]),
-                  SizedBox(height: 6),
-                  Text(
-                    projectData["title"],
-                    textAlign: TextAlign.center,
-                    style:
-                        DeviceDetails(context).deviceType == DeviceType.Desktop
-                            ? Theme.of(context).textTheme.headline5.copyWith(
-                                  color: primaryTextColorBright,
-                                )
-                            : Theme.of(context).textTheme.subtitle1.copyWith(
-                                  color: primaryTextColorBright,
-                                ),
-                  ),
-                  SizedBox(height: 16),
-                  ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxWidth: DeviceDetails(context).deviceType ==
+    return Center(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxWidth: DeviceDetails(context).deviceType == DeviceType.Desktop
+              ? 700
+              : 320,
+        ),
+        child: Column(
+          children: List.generate(
+            data["projects"].length,
+            (index) {
+              final projectData = data["projects"][index];
+              return Container(
+                margin: EdgeInsets.symmetric(
+                  vertical:
+                      DeviceDetails(context).deviceType == DeviceType.Desktop
+                          ? 8
+                          : 4,
+                ),
+                padding: EdgeInsets.all(
+                  DeviceDetails(context).deviceType == DeviceType.Desktop
+                      ? 14
+                      : 8,
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white.withOpacity(0.1),
+                ),
+                child: Column(
+                  children: [
+                    Player(id: projectData["youtube-id"]),
+                    SizedBox(height: 6),
+                    Text(
+                      projectData["title"],
+                      textAlign: TextAlign.center,
+                      style: DeviceDetails(context).deviceType ==
                               DeviceType.Desktop
-                          ? 300
-                          : 150,
+                          ? Theme.of(context).textTheme.headline5.copyWith(
+                                color: primaryTextColorBright,
+                              )
+                          : Theme.of(context).textTheme.subtitle1.copyWith(
+                                color: primaryTextColorBright,
+                              ),
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ActionButton(
-                          title: "Description",
-                          onPressed: () {
-                            showDialog(
-                              context: context,
-                              builder: (context) {
-                                return SimpleDialog(
-                                  title: Center(
-                                    child: Text(
-                                      "Description",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                  children: [
-                                    ConstrainedBox(
-                                      constraints: BoxConstraints(
-                                        maxWidth: 700,
-                                      ),
+                    SizedBox(height: 16),
+                    ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxWidth: DeviceDetails(context).deviceType ==
+                                DeviceType.Desktop
+                            ? 300
+                            : 150,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ActionButton(
+                            title: "Description",
+                            onPressed: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return SimpleDialog(
+                                    title: Center(
                                       child: Text(
-                                        projectData["description"],
+                                        "Description",
                                         style: TextStyle(
                                           color: Colors.black,
+                                          fontWeight: FontWeight.bold,
                                         ),
                                       ),
                                     ),
-                                  ],
-                                  contentPadding: EdgeInsets.symmetric(
-                                    vertical: 12,
-                                    horizontal: 16,
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                          icon: Icons.description,
-                        ),
-                        ActionButton(
-                          title: "Source Code",
-                          onPressed: () {
-                            js.context.callMethod(
-                              "open",
-                              [projectData["source-code-url"]],
-                            );
-                          },
-                          icon: Icons.code,
-                        ),
-                        if (projectData["executable"] != null)
+                                    children: [
+                                      ConstrainedBox(
+                                        constraints: BoxConstraints(
+                                          maxWidth: 700,
+                                        ),
+                                        child: Text(
+                                          projectData["description"],
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                    contentPadding: EdgeInsets.symmetric(
+                                      vertical: 12,
+                                      horizontal: 16,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                  );
+                                },
+                              );
+                            },
+                            icon: Icons.description,
+                          ),
                           ActionButton(
-                            title: "Executable",
+                            title: "Source Code",
                             onPressed: () {
                               js.context.callMethod(
                                 "open",
-                                [projectData["executable"]],
+                                [projectData["source-code-url"]],
                               );
                             },
-                            icon: Icons.download_sharp,
+                            icon: Icons.code,
                           ),
-                      ],
+                          if (projectData["executable"] != null)
+                            ActionButton(
+                              title: "Executable",
+                              onPressed: () {
+                                js.context.callMethod(
+                                  "open",
+                                  [projectData["executable"]],
+                                );
+                              },
+                              icon: Icons.download_sharp,
+                            ),
+                        ],
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 12),
-                  ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxHeight: 30,
-                    ),
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: List.generate(
-                        projectData["skills"].length,
-                        (i) => Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 2),
-                          child: Chip(
-                            label: Text(
-                              projectData["skills"][i],
-                              textScaleFactor: 0.8,
+                    SizedBox(height: 12),
+                    ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxHeight: 30,
+                      ),
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: List.generate(
+                          projectData["skills"].length,
+                          (i) => Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 2),
+                            child: Chip(
+                              label: Text(
+                                projectData["skills"][i],
+                                textScaleFactor: 0.8,
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            );
-          },
+                  ],
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
