@@ -10,7 +10,6 @@ class AboutSection extends StatefulWidget {
   _AboutSectionState createState() => _AboutSectionState();
 }
 
-// TODO: scroll bar
 class _AboutSectionState extends State<AboutSection> {
   @override
   Widget build(BuildContext context) {

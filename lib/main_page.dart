@@ -23,50 +23,59 @@ class MainPage extends StatelessWidget {
 }
 
 class Body extends StatelessWidget {
-  const Body({
+  final ScrollController _scrollController = ScrollController();
+  Body({
     Key key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        child: Stack(
-          clipBehavior: Clip.none,
-          children: [
-            Align(
-              alignment: Alignment.topCenter,
-              child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 10,
+    return SafeArea(
+      child: Scrollbar(
+        controller: _scrollController,
+        isAlwaysShown: true,
+        showTrackOnHover: true,
+        child: SingleChildScrollView(
+          controller: _scrollController,
+          child: Container(
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 10,
+                    ),
+                    height: DeviceDetails(context).height * 0.6,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: primaryColor,
+                    ),
+                    child: Column(
+                      children: [
+                        DeviceDetails(context).deviceType == DeviceType.Desktop
+                            ? NavBarDesktop()
+                            : NavBarMobile(),
+                        PortfolioLabel(),
+                      ],
+                    ),
+                  ),
                 ),
-                height: DeviceDetails(context).height * 0.6,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: primaryColor,
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Column(
+                    children: [
+                      SizedBox(height: DeviceDetails(context).height * 0.14),
+                      ContentCanvas(),
+                      SizedBox(height: DeviceDetails(context).height * 0.05),
+                    ],
+                  ),
                 ),
-                child: Column(
-                  children: [
-                    DeviceDetails(context).deviceType == DeviceType.Desktop
-                        ? NavBarDesktop()
-                        : NavBarMobile(),
-                    PortfolioLabel(),
-                  ],
-                ),
-              ),
+              ],
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Column(
-                children: [
-                  SizedBox(height: DeviceDetails(context).height * 0.14),
-                  ContentCanvas(),
-                  SizedBox(height: DeviceDetails(context).height * 0.05),
-                ],
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );

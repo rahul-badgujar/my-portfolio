@@ -14,7 +14,7 @@ class ProjectsSection extends StatelessWidget {
         constraints: BoxConstraints(
           maxWidth: DeviceDetails(context).deviceType == DeviceType.Desktop
               ? 700
-              : 320,
+              : 350,
         ),
         child: Column(
           children: List.generate(
@@ -25,8 +25,8 @@ class ProjectsSection extends StatelessWidget {
                 margin: EdgeInsets.symmetric(
                   vertical:
                       DeviceDetails(context).deviceType == DeviceType.Desktop
-                          ? 8
-                          : 4,
+                          ? 12
+                          : 6,
                 ),
                 padding: EdgeInsets.all(
                   DeviceDetails(context).deviceType == DeviceType.Desktop
