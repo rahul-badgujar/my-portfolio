@@ -67,7 +67,7 @@ class Body extends StatelessWidget {
                   alignment: Alignment.bottomCenter,
                   child: Column(
                     children: [
-                      SizedBox(height: DeviceDetails(context).height * 0.14),
+                      SizedBox(height: DeviceDetails(context).height * 0.17),
                       ContentCanvas(),
                       SizedBox(height: DeviceDetails(context).height * 0.05),
                     ],

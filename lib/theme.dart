@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/constants.dart';
 
 class AppTheme {
@@ -48,7 +49,7 @@ class AppTheme {
   }
 
   TextTheme getTextTheme() {
-    return base.textTheme.copyWith(
+    final textTheme = base.textTheme.copyWith(
       headline1: base.textTheme.headline1.copyWith(
         color: primaryTextColor,
       ),
@@ -71,5 +72,6 @@ class AppTheme {
         color: primaryTextColor,
       ),
     );
+    return GoogleFonts.muliTextTheme(textTheme);
   }
 }

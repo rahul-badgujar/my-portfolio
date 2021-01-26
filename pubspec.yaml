@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   firebase_core: ^0.7.0
+  google_fonts: ^1.1.2
   pinch_zoom_image_updated: ^0.2.6
   provider: ^4.3.3
   youtube_player_iframe: ^1.2.0+2
