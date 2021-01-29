@@ -23,7 +23,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cloud_firestore: ^0.16.0
   firebase_core: ^0.7.0
+  firebase_storage: ^7.0.0
+  flutter_icons: ^1.0.0
   google_fonts: ^1.1.2
   pinch_zoom_image_updated: ^0.2.6
   provider: ^4.3.3

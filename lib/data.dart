@@ -1,55 +1,9 @@
 final data = <String, dynamic>{
-  "name": "Rahul Badgujar",
-  "title": "3-star on Codechef | FlutterFire Developer | C++ Programmer",
-  "bio":
-      '''I am a passionate programmer with approximately 3 years of coding experience. Moreover, I am currently pursuing Bachelors in Information Technology at  Pimpri Chinchwad College of Engineering in Pune. I've  a good coding experience in domains such as  C++, Flutter and I am currently exploring  Firebase and Flutter.''',
   "photo": "assets/images/dp-transparent.png",
-  "skillset": [
-    "C++",
-    "Flutter",
-    "Firebase",
-    "Python",
-    "Java",
-  ],
-  "work": "Student",
-  "currently-working": "FlutterFire",
   "resume": "assets/images/resume.jpg",
-  "resume-url":
-      "https://github.com/rahul-badgujar/rahul-badgujar/blob/main/Resumes/RahulBadgujar_InternshalaResume.pdf",
-  "resume-download-url":
-      "https://github.com/rahul-badgujar/rahul-badgujar/raw/main/Resumes/RahulBadgujar_InternshalaResume.pdf",
-  "contact": [
-    {
-      "domain": "LinkedIn",
-      "url": "https://www.linkedin.com/in/rahulbadgujar/",
-      "logo": "assets/icons/linkedin-icon.png",
-    },
-    {
-      "domain": "GitHub",
-      "url": "https://github.com/rahul-badgujar",
-      "logo": "assets/icons/github-icon.png",
-    },
-    {
-      "domain": "Competitive Coding",
-      "url": "https://www.codechef.com/users/im_rb7_here",
-      "logo": "assets/icons/contest-icon.png",
-    },
-    /* {
-      "domain": "Facebook",
-      "url": "https://www.facebook.com/imRB7here",
-      "logo": "assets/icons/facebook-icon.png",
-    },
-    {
-      "domain": "Instagram",
-      "url": "https://www.instagram.com/_rahul.badgujar_/",
-      "logo": "assets/icons/instagram-icon.png",
-    },
-    {
-      "domain": "Twitter",
-      "url": "https://twitter.com/imRB7here",
-      "logo": "assets/icons/twitter-icon.png",
-    }, */
-  ],
+  "linkedin-logo": "assets/icons/linkedin-icon.png",
+  "github-logo": "assets/icons/github-icon.png",
+  "codechef-logo": "assets/icons/contest-icon.png",
   "projects": [
     {
       "title": "EShopee: eCommerce Flutter App",
