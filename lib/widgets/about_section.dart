@@ -5,7 +5,6 @@ import 'package:my_portfolio/data.dart';
 import 'package:my_portfolio/models/BasicDetails.dart';
 import 'package:my_portfolio/services/firestore_helper.dart';
 import 'package:my_portfolio/utils.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 
 import 'contact_item.dart';
 

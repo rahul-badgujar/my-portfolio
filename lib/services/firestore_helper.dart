@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:my_portfolio/models/BasicDetails.dart';
+import 'package:my_portfolio/models/ProjectDetails.dart';
 
 class FirestoreHelper {
   FirestoreHelper._private();
@@ -27,5 +28,18 @@ class FirestoreHelper {
         .doc(DATA_DOC_ID)
         .get();
     return BasicDetails.fromMap(docSnapshot.data());
+  }
+
+  // projects collection
+  static const String PROJECTS_COLLECTION_NAME = "projects";
+
+  Future<List<ProjectDetails>> getMyProjectsList() async {
+    final querySnapshot =
+        await firestore.collection(PROJECTS_COLLECTION_NAME).get();
+    List<ProjectDetails> projects = [];
+    for (final doc in querySnapshot.docs) {
+      projects.add(ProjectDetails.fromMap(doc.data()));
+    }
+    return projects;
   }
 }
