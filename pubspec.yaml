@@ -25,8 +25,8 @@ dependencies:
     sdk: flutter
   cloud_firestore: ^0.16.0
   firebase_core: ^0.7.0
-  firebase_storage: ^7.0.0
   google_fonts: ^1.1.2
+  native_pdf_renderer: ^2.4.0
   pinch_zoom_image_updated: ^0.2.6
   provider: ^4.3.3
   youtube_player_iframe: ^1.2.0+2
@@ -50,6 +50,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/docs/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
