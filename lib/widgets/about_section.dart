@@ -179,18 +179,19 @@ class BioItem extends StatelessWidget {
           SizedBox(height: 12),
           Row(
             children: [
-              Icon(
-                Icons.work,
-              ),
-              SizedBox(width: 6),
-              Text(
-                "Working status : ",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Text(
-                details.workStatus,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Working status",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    details.workStatus,
+                  ),
+                ],
               ),
             ],
           ),
