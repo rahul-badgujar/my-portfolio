@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/constants.dart';
@@ -48,8 +49,8 @@ class _AboutSectionState extends State<AboutSection> {
           minRadius: DeviceDetails(context).deviceType == DeviceType.Desktop
               ? DeviceDetails(context).height * 0.1
               : DeviceDetails(context).width * 0.1,
-          backgroundImage: AssetImage(
-            data["photo"],
+          backgroundImage: CachedNetworkImageProvider(
+            data['photo_url'],
           ),
         ),
         SizedBox(height: 15),
@@ -179,18 +180,19 @@ class BioItem extends StatelessWidget {
           SizedBox(height: 12),
           Row(
             children: [
-              Icon(
-                Icons.work,
-              ),
-              SizedBox(width: 6),
-              Text(
-                "Working status : ",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Text(
-                details.workStatus,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Working status",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    details.workStatus,
+                  ),
+                ],
               ),
             ],
           ),
